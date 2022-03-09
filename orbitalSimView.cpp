@@ -24,7 +24,11 @@ const char* getISODate(float currentTime) {
 
 void renderOrbitalSim3D(OrbitalSim *sim)
 {
-    // Your code goes here...
+    for (int i = 0; i < sim->cantcuerpos; i++)
+    {
+        DrawSphere(sim->cuerpos[i].position, sim->cuerpos[i].radius, sim->cuerpos[i].color);
+        DrawPoint3D(sim->cuerpos[i].position, sim->cuerpos[i].color);
+    }
 }
 
 void renderOrbitalSim2D(OrbitalSim *sim)
